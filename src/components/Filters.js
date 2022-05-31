@@ -2,7 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Filters = () => {
-  const { human } = useSelector((state) => state.ProductsReducer);
+  const { human, brand_check, price_check, brandFilter } = useSelector(
+    (state) => state.ProductsReducer,
+  );
 
   const dispatch = useDispatch();
 
@@ -73,6 +75,7 @@ const Filters = () => {
                 onChange={(e) =>
                   dispatch({ type: "FILTER_BY_BRAND", payload: e.target.name })
                 }
+                checked={brandFilter === "Roadster" ? true : false}
               />
                
             </div>
@@ -86,6 +89,7 @@ const Filters = () => {
                 onChange={(e) =>
                   dispatch({ type: "FILTER_BY_BRAND", payload: e.target.name })
                 }
+                checked={brandFilter === "LouisPhilippe" ? true : false}
               />
                 <label for="LouisPhilippe">LouisPhilippe</label>
             </div>
@@ -98,6 +102,7 @@ const Filters = () => {
                 onChange={(e) =>
                   dispatch({ type: "FILTER_BY_BRAND", payload: e.target.name })
                 }
+                checked={brandFilter === "AllenSolly" ? true : false}
               />
                 <label for="AllenSolly">AllenSolly</label>
             </div>
@@ -110,6 +115,7 @@ const Filters = () => {
                 onChange={(e) =>
                   dispatch({ type: "FILTER_BY_BRAND", payload: e.target.name })
                 }
+                checked={brandFilter === "HighLander" ? true : false}
               />
                <label for="HighLander">HighLander</label>
             </div>

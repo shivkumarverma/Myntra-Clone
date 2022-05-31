@@ -9,6 +9,8 @@ const initState = {
   minprice: 0,
   maxprice: 0,
   sort: "",
+  brand_check: "",
+  price_check: "",
 };
 
 const ProductsReducer = (state = initState, action) => {
@@ -54,6 +56,8 @@ const ProductsReducer = (state = initState, action) => {
         brandFilter: "",
         minprice: 0,
         maxprice: 0,
+        brand_check: false,
+        price_check: false,
       };
     case "SORT_BY_PRICE":
       return {

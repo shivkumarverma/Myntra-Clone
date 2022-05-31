@@ -39,7 +39,9 @@ const Home = () => {
 
     if (sort) {
       sortedproduct = sortedproduct.sort((a, b) =>
-        sort === "lowtohigh" ? a.price - b.price : b.price - a.price,
+        sort === "lowtohigh"
+          ? a.discountPrice - b.discountPrice
+          : b.discountPrice - a.discountPrice,
       );
     }
 
