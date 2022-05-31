@@ -1,32 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import Dropdown from "./Dropdown";
 const TopHeader = () => {
   const dispatch = useDispatch();
+
+  const [selected, setSelected] = useState("");
   return (
     <div className="top_header">
-      <ul>
-        <li
+      <div className="left-filter">
+        <div className="filt">Filters</div>
+        <button
           onClick={() => {
-            dispatch({ type: "SORT_ID", payload: "sortid" });
+            dispatch({ type: "CLEAR_FILTERS" });
           }}
         >
-          Relevence
-        </li>
-        <li
-          onClick={() => {
-            dispatch({ type: "SORT_BY_PRICE", payload: "hightolow" });
-          }}
-        >
-          High to Low
-        </li>
-        <li
-          onClick={() => {
-            dispatch({ type: "SORT_BY_PRICE", payload: "lowtohigh" });
-          }}
-        >
-          Low To High
-        </li>
-      </ul>
+          Clear All
+        </button>
+      </div>
+      <div className="rigth-sort">
+        <Dropdown selected={selected} setSelected={setSelected} />
+      </div>
     </div>
   );
 };

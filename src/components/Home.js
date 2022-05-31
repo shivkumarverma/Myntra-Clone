@@ -71,11 +71,12 @@ const Home = () => {
                         alt="product name"
                       />
                     </Link>
+                    <div className="similar_div">
+                      <button className="similar_btn">similar</button>
+                      <span className="similar_s">s</span>
+                    </div>
                   </div>
 
-                  <div className="similar_div">
-                    <button className="similar_btn">similar</button>
-                  </div>
                   <div className="product_details">
                     <div className="p_info1">
                       <div className="product_brand">{product.brand}</div>
